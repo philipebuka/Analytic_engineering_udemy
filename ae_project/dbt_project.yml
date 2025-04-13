@@ -36,3 +36,7 @@ models:
       +materialized: table
       +schema: stage_layer
 
+    warehouse: #where we will build our analytics models
+      +materilized: view
+      +schema: warehouse_layer
+
