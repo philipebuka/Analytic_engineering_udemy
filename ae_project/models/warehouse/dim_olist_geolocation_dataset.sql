@@ -7,7 +7,7 @@ geolocation_lng,
 geolocation_city,
 geolocation_state
 
-from {{ ref(stg_olist_geolocation_dataset) }}
+from {{ ref('stg_olist_geolocation_dataset') }}
 )
 
 select * from source
