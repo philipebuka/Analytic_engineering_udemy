@@ -1,3 +1,5 @@
+with source as 
+(
 select
 review_id,
 order_id,
@@ -7,3 +9,5 @@ review_comment_message,
 review_creation_date,
 review_answer_timestamp
 from {{ ref(stg_olist_order_reviews_dataset) }}
+)
+select * from source
