@@ -8,6 +8,6 @@ review_comment_title,
 review_comment_message,
 review_creation_date,
 review_answer_timestamp
-from {{ ref(stg_olist_order_reviews_dataset) }}
+from {{ ref('stg_olist_order_reviews_dataset') }}
 )
 select * from source

@@ -15,15 +15,15 @@ with source as (
     o.order_delivered_carrier_date,
     o.order_delivered_customer_date,
     o.order_estimated_delivery_date
-    from {{ ref(stg_olist_order_items_dataset) }} as oi
-    left join {{ ref(stg_olist_order_payments_dataset) }} as op
+    from {{ ref('stg_olist_order_items_dataset') }} as oi
+    left join {{ ref('stg_olist_order_payments_dataset') }} as op
     on op.order_id = oi.order_id
-    left join {{ ref(stg_olist_orders_dataset) }} as o
+    left join {{ ref('stg_olist_orders_dataset') }} as o
     on op.order_id = o.order_id
-    left join {{ ref(source.olist_customers_dataset) }} cu
+    left join {{ ref('stg_olist_customers_dataset') }} cu
     on o.customer_id = cu.customer_id
     )
     
 select *
-from source;
+from source
 
